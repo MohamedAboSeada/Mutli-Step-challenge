@@ -1,0 +1,82 @@
+// design colors
+$colors: (
+	'MB': hsl(213, 96%, 18%),
+	'PB': hsl(243, 100%, 62%),
+	'PC': hsla(228, 100%, 84%, 0.1),
+	'LB': hsl(206, 94%, 87%),
+	'SR': hsl(354, 84%, 57%),
+	'CG': hsl(231, 11%, 63%),
+	'LG': hsl(229, 24%, 87%),
+	'MA': hsl(217, 100%, 97%),
+	'AR': hsl(231, 100%, 99%),
+	'WE': hsl(0, 0%, 100%),
+);
+
+// typography
+@font-face {
+	font-family: REGULAR;
+	src: url('../assets/fonts/Ubuntu-Regular.ttf');
+}
+@font-face {
+	font-family: MEDIUM;
+	src: url('../assets/fonts/Ubuntu-Medium.ttf');
+}
+@font-face {
+	font-family: BOLD;
+	src: url('../assets/fonts/Ubuntu-Bold.ttf');
+}
+$fonts: (
+	'Regular': REGULAR,
+	'Medium': MEDIUM,
+	'Bold': BOLD,
+);
+
+// General Variables
+$breakpoints: (
+	small: 480px,
+	medium: 700px,
+	// Previously 640px
+	large: 1024px,
+);
+
+$p-font-sizes: (
+	null: 1rem,
+	small: 1.3rem,
+	medium: 1.6rem,
+	large: 1.9px,
+);
+
+$h1-font-sizes: (
+	null: 1.9px,
+	small: 2.2px,
+	medium: 2.5px,
+	large: 2.8px,
+);
+// images
+$images: (
+	'bg-side-desktop': url('../assets/images/bg-sidebar-desktop.svg'),
+	'bg-side-mobile': url('../assets/images/bg-sidebar-mobile.svg'),
+	'icon-advanced': url('../assets/images/icon-advanced.svg'),
+	'icon-arcade': url('../assets/images/icon-arcade.svg'),
+	'icon-checkmark': url('../assets/images/icon-checkmark.svg'),
+	'icon-pro': url('../assets/images/icon-pro.svg'),
+	'icon-thank-you': url('../assets/images/icon-thank-you.svg'),
+);
+$grid-breakpoints: (
+	xs: 0,
+	// Extra small devices (portrait phones, less than 576px)
+	sm: 576px,
+	// Small devices (landscape phones, 576px and up)
+	md: 768px,
+	// Medium devices (tablets, 768px and up)
+	lg: 992px,
+	// Large devices (desktops, 992px and up)
+	xl: 1200px,
+	// Extra large devices (large desktops, 1200px and up)
+	xxl: 1400px
+		// Extra extra large devices (larger desktops, 1400px and up),,,,,,,,,,,,,,,,,,,,,,,
+);
+// the api function
+/*
+	Color,Font,Image,BK
+*/

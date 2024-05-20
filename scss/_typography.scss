@@ -1,0 +1,86 @@
+// _typography.scss
+html {
+	font-size: 16px;
+
+	@media (max-width: 1200px) {
+		font-size: 15px;
+	}
+
+	@media (max-width: 992px) {
+		font-size: 14px;
+	}
+
+	@media (max-width: 768px) {
+		font-size: 13px;
+	}
+
+	@media (max-width: 576px) {
+		font-size: 12px;
+	}
+}
+
+body {
+	font-size: 1rem;
+	line-height: 1.5;
+	margin-bottom: 1rem;
+}
+
+$base-font-size: 1rem;
+$scale-ratio: 1.2;
+
+@mixin responsive-font($min-size, $max-size) {
+	font-size: $min-size;
+
+	@media (min-width: 576px) {
+		font-size: calc(
+			#{$min-size} + #{$max-size - $min-size} *
+				((100vw - 576px) / (1200 - 576))
+		);
+	}
+
+	@media (min-width: 1200px) {
+		font-size: $max-size;
+	}
+}
+
+h1 {
+	@include responsive-font(2rem, 3rem);
+	line-height: 1.2;
+	margin-bottom: 0.5rem;
+}
+
+h2 {
+	@include responsive-font(1.75rem, 2.5rem);
+	line-height: 1.2;
+	margin-bottom: 0.5rem;
+}
+
+h3 {
+	@include responsive-font(1.5rem, 2rem);
+	line-height: 1.2;
+	margin-bottom: 0.5rem;
+}
+
+h4 {
+	@include responsive-font(1.25rem, 1.75rem);
+	line-height: 1.2;
+	margin-bottom: 0.5rem;
+}
+
+h5 {
+	@include responsive-font(1rem, 1.25rem);
+	line-height: 1.2;
+	margin-bottom: 0.5rem;
+}
+
+h6 {
+	@include responsive-font(0.875rem, 1rem);
+	line-height: 1.2;
+	margin-bottom: 0.5rem;
+}
+
+p {
+	@include responsive-font(1rem, 1.125rem);
+	line-height: 1.5;
+	margin-bottom: 1rem;
+}

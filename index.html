@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Multi-step-form</title>
+		<link rel="stylesheet" href="css/main.css" />
+	</head>
+	<body>
+		<!-- steps -->
+		<div class="steps">
+			<div class="step">
+				<p class="step__number active">1</p>
+				<div class="step__info">
+					<h3>step 1</h3>
+					<h3>Your Info</h3>
+				</div>
+			</div>
+			<div class="step">
+				<p class="step__number">2</p>
+				<div class="step__info">
+					<h3>step 2</h3>
+					<h3>Select Plan</h3>
+				</div>
+			</div>
+			<div class="step">
+				<p class="step__number">3</p>
+				<div class="step__info">
+					<h3>step 3</h3>
+					<h3>ADD-ons</h3>
+				</div>
+			</div>
+			<div class="step">
+				<p class="step__number">4</p>
+				<div class="step__info">
+					<h3>step 4</h3>
+					<h3>Summary</h3>
+				</div>
+			</div>	
+		</div>
+		<!-- / steps -->
+		<!-- form -->
+		<div class="forms">
+			<!-- first form -->
+			<div class="personal_info show">
+				<div class="header">
+					<h1>Personal info</h1>
+					<p>Please provide your name,email address and phone number.</p>
+				</div>
+				<div class="inputs">
+					<div class="name"><label for="">Name</label><input type="text" placeholder="e.g. Stephen King"></div>
+					<div class="email"><label for="">Email Address</label><input type="email" placeholder="e.g. example@example.com"></div>
+					<div class="phone"><label for="">Phone number</label><input type="text" placeholder="e.g. +20 11 2222 2222"></div>
+				</div>
+			</div>
+			<!-- / first form -->
+			<!-- second form -->
+			<div class="plans hide">
+				<div class="header">
+					<h1>Select your plan</h1>
+					<p>You have the option of monthly or yearly billing.</p>
+				</div>
+
+				<div class="plans_cards">
+					<div class="plan_card active">
+						<div class="plan__image"></div>
+						<div class="plan_info">
+							<h2>Arcade</h2>
+							<p>$9/mo</p>
+						</div>
+					</div>
+					
+					<div class="plan_card">
+						<div class="plan__image"></div>
+						<div class="plan_info">
+							<h2>Advanced</h2>
+							<p>$12/mo</p>
+						</div>
+					</div>
+					
+					<div class="plan_card">
+						<div class="plan__image"></div>
+						<div class="plan_info">
+							<h2>Pro</h2>
+							<p>$15/mo</p>
+						</div>
+					</div>
+
+					
+				</div>
+				<div class="toggler">
+					<span class="active">Monthly</span>
+					<div class="toggle">
+						<div class="circle"></div>
+					</div>
+					<span>Yearly</span>
+				</div>
+			</div>
+			<!-- end second form -->
+			<!-- third -->
+			<div class="fomr hide">
+				<h1>Third</h1>
+			</div>
+			<!-- /third -->
+			<!-- fourth -->
+			<div class="fomr hide">
+				<h1>Fourth</h1>
+			</div>
+			<!-- fourth -->
+		</div>
+		<!-- /form -->
+
+		<!-- navigate -->`
+		<div class="navigate">
+			<button id="last">Go back</button>
+			<button id="next">Next step</button>
+		</div>
+		<!-- /naviage -->
+		<script src="js/main.js"></script>
+	</body>
+</html>

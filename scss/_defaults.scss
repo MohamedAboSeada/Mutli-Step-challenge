@@ -1,0 +1,93 @@
+@function Color($color) {
+	@return map-get($colors, $color);
+}
+
+@function Font($font) {
+	@return map-get($fonts, $font);
+}
+
+@mixin font-size($fs-map, $fs-breakpoints: $breakpoints) {
+	@each $fs-breakpoint, $fs-font-size in $fs-map {
+		@if $fs-breakpoint == null {
+			font-size: $fs-font-size;
+		} @else {
+			// If $fs-font-size is a key that exists in
+			// $fs-breakpoints, use the value
+			@if map-has-key($fs-breakpoints, $fs-breakpoint) {
+				$fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+			}
+			@media screen and (min-width: $fs-breakpoint) {
+				font-size: $fs-font-size;
+			}
+		}
+	}
+}
+
+@function Image($image) {
+	@return map-get($images, $image);
+}
+
+@mixin media-breakpoint-up($breakpoint) {
+	@media (min-width: map-get($grid-breakpoints,$breakpoint)) {
+		@content;
+	}
+}
+@mixin mobile() {
+	@media (max-width: map-get($grid-breakpoints,'md')) {
+		@content;
+	}
+}
+
+@function BK($breakpoint) {
+	@return map-get($grid-breakpoints, $breakpoint);
+}
+
+// make responsive container
+.container {
+	margin: 0 auto;
+	padding: 0 15px;
+	@include media-breakpoint-up('sm') {
+		width: calc(BK('sm') - 10px);
+	}
+	@include media-breakpoint-up('md') {
+		width: calc(BK('md') - 10px);
+	}
+	@include media-breakpoint-up('lg') {
+		width: calc(BK('lg') - 10px);
+	}
+	@include media-breakpoint-up('xl') {
+		width: calc(BK('xl') - 10px);
+	}
+}
+
+body {
+	font-family: Font(Regular);
+}
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+@mixin flex($direction, $justify-content, $align-items, $gap) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justify-content;
+	align-items: $align-items;
+	@if $direction == 'column' or $direction == 'column-reverse' {
+		gap: $gap 0;
+	} @else {
+		gap: 0 $gap;
+	}
+}
+@mixin bg($image){
+	background-image: $image;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.hide{
+	display: none;
+}
+.show{
+	display: block;
+}
