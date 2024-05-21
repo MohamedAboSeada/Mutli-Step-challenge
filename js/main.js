@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	const nextBtn = document.getElementById('next');
 	const lastBtn = document.getElementById('last');
 	let index = 0;
+	let toggle = 'Monthly';
+
 	let bills = {
 		plan: document.querySelector('.plans_cards div.active').children[1],
 		services: document.querySelectorAll(
@@ -20,13 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (nextStep) {
 			index++;
 			activeStep.classList.remove('active');
-			nextStep.classList.add('active');	
+			nextStep.classList.add('active');
 		}
 
-		if(index>=3){
+		if (index >= 3) {
 			nextBtn.textContent = 'Confirm';
 		}
-
 
 		const nextForm = activeForm.nextElementSibling;
 		if (nextForm) {
@@ -44,18 +45,18 @@ document.addEventListener('DOMContentLoaded', () => {
 			lastBtn.style.visibility = 'hidden';
 			lastBtn.style.opacity = '0';
 		}
-		
+
 		const lastStep =
-		activeStep.parentNode.previousElementSibling?.children[0];
+			activeStep.parentNode.previousElementSibling?.children[0];
 		if (lastStep) {
 			index--;
 			activeStep.classList.remove('active');
 			lastStep.classList.add('active');
 		}
-		if(index < 3){
+		if (index < 3) {
 			nextBtn.textContent = 'Next Step';
 		}
-		
+
 		const lastForm = activeForm.previousElementSibling;
 		if (lastForm) {
 			activeForm.classList.replace('show', 'hide');
@@ -132,7 +133,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			service_row.className = 'service__row';
 			let service_name = document.createElement('h3');
 			let service_price = document.createElement('h3');
-			console.log(bill.children);
 			service_name.textContent =
 				bill.children[0].firstElementChild.textContent;
 			service_price.textContent = bill.children[1].textContent;
@@ -140,6 +140,21 @@ document.addEventListener('DOMContentLoaded', () => {
 			service_row.append(service_price);
 			services_bills.append(service_row);
 		});
+
+		// total
+		let total_type = document.getElementById('plan_type');
+		total_type.textContent = toggle;
+		let total = 0;
+		let total_sum = document.getElementById('total');
+		total += extractNumber(bills.plan.lastElementChild.textContent);
+		[...bills.services].forEach(service => {
+			total += extractNumber(service.lastElementChild.textContent);
+		});
+		total_sum.textContent = `+${total}/${(toggle === "Monthly") ? 'mo' : 'yr'}`;
+	}
+	function extractNumber(str) {
+		const match = str.match(/\d+/);
+		return match ? Number(match[0]) : null;
 	}
 	// change plan btn
 	let change_btn = document.getElementById('change_plan');
@@ -159,11 +174,48 @@ document.addEventListener('DOMContentLoaded', () => {
 		let plans = document.querySelector('.plans');
 		plans.classList.replace('hide', 'show');
 	});
+
+	// make the toggler
+	let toggler_span = document.querySelectorAll('.toggler span');
+	let toggle_btn = document.querySelector('.toggle');
+	let Plan_Prices = {
+		Yearly: ['+$90/yr', '+$120/yr', '+$150/yr'],
+		Monthly: ['+$9/mo', '+$12/mo', '+$15/mo'],
+	};
+	let Service_Prices = {
+		Yearly: ['+$10/yr', '+$20/yr', '+$20/yr'],
+		Monthly: ['+$1/mo', '+$2/mo', '+$2/mo'],
+	};
+	const plan_prices = document.querySelectorAll('.plan_info_price');
+	const service_prices = document.querySelectorAll('.price');
+	console.log(plan_prices, service_prices);
+	toggle_btn.addEventListener('click', (_) => {
+		toggle = toggle === 'Monthly' ? 'Yearly' : 'Monthly';
+		[...toggler_span].forEach((span) => {
+			if (span.classList.contains('active')) {
+				span.classList.remove('active');
+			} else {
+				span.classList.add('active');
+			}
+		});
+		
+		toggle_btn.children[0].classList.toggle('yearly');
+
+		if (toggle === 'Monthly') {
+			[...plan_prices].forEach((plan_price, index) => {
+				plan_price.textContent = Plan_Prices[toggle][index];
+			});
+			[...service_prices].forEach((service_price, index) => {
+				service_price.textContent = Service_Prices[toggle][index];
+			});
+		} else {
+			[...plan_prices].forEach((plan_price, index) => {
+				plan_price.textContent = Plan_Prices[toggle][index];
+			});
+			[...service_prices].forEach((service_price, index) => {
+				service_price.textContent = Service_Prices[toggle][index];
+			});
+		}
+	});
 });
 
-// todo list
-/*
-  [ ] : Make toggle button
-  [ ] : Make form validation after next step
-  [ ] : complete the rest forms 
- */

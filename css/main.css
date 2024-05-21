@@ -430,6 +430,10 @@ body {
   height: 20px;
   border-radius: 50%;
   background-color: hsl(229, 24%, 87%);
+  transition: 300ms ease;
+}
+.plans .toggler .toggle .yearly {
+  align-self: flex-end;
 }
 
 .addons__cards {
