@@ -250,50 +250,6 @@ body {
     min-height: 300px;
     transition: height 100ms ease;
   }
-  .forms .header {
-    margin-bottom: 20px;
-  }
-  .forms .header h1 {
-    color: hsl(213, 96%, 18%);
-    font-size: 2.2rem;
-    font-weight: 700;
-  }
-  .forms .header p {
-    color: hsl(231, 11%, 63%);
-    font-size: 1.5rem;
-  }
-  .forms .personal_info .inputs div {
-    display: flex;
-    flex-direction: column;
-    justify-content: none;
-    align-items: none;
-    gap: 5px 0;
-    margin-bottom: 10px;
-  }
-  .forms .personal_info .inputs div label {
-    font-size: 1.3rem;
-    color: hsl(213, 96%, 18%);
-    text-transform: capitalize;
-  }
-  .forms .personal_info .inputs div input {
-    border: 1px solid hsl(229, 24%, 87%);
-    padding: 15px;
-    font-size: 1.3rem;
-    border-radius: 5px;
-    font-family: inherit;
-    outline: none;
-  }
-  .forms .personal_info .inputs div input:focus {
-    border-color: hsl(213, 96%, 18%);
-  }
-  .forms .personal_info .inputs div input::-moz-placeholder {
-    font-weight: bold;
-    color: #999;
-  }
-  .forms .personal_info .inputs div input::placeholder {
-    font-weight: bold;
-    color: #999;
-  }
   .navigate {
     display: flex;
     flex-direction: row;
@@ -328,6 +284,52 @@ body {
     color: hsl(0, 0%, 100%);
   }
 }
+.header {
+  margin-bottom: 20px;
+}
+.header h1 {
+  color: hsl(213, 96%, 18%);
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+.header p {
+  color: hsl(231, 11%, 63%);
+  font-size: 1.5rem;
+}
+
+.personal_info .inputs div {
+  display: flex;
+  flex-direction: column;
+  justify-content: none;
+  align-items: none;
+  gap: 5px 0;
+  margin-bottom: 10px;
+}
+.personal_info .inputs div label {
+  font-size: 1.3rem;
+  color: hsl(213, 96%, 18%);
+  text-transform: capitalize;
+}
+.personal_info .inputs div input {
+  border: 1px solid hsl(229, 24%, 87%);
+  padding: 15px;
+  font-size: 1.3rem;
+  border-radius: 5px;
+  font-family: inherit;
+  outline: none;
+}
+.personal_info .inputs div input:focus {
+  border-color: hsl(213, 96%, 18%);
+}
+.personal_info .inputs div input::-moz-placeholder {
+  font-weight: bold;
+  color: #999;
+}
+.personal_info .inputs div input::placeholder {
+  font-weight: bold;
+  color: #999;
+}
+
 .plans .plans_cards {
   display: flex;
   flex-direction: column;
@@ -534,4 +536,77 @@ body {
 
 .hidden-xs-up {
   display: none !important;
+}
+
+.bills {
+  display: flex;
+  flex-direction: column;
+  justify-content: none;
+  align-items: none;
+  gap: 10px 0;
+  padding: 20px;
+  background-color: hsl(217, 100%, 97%);
+  border-radius: 10px;
+}
+.bills .bills__plan {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0 none;
+  height: 70px;
+  border-bottom: 1px solid #ccc;
+}
+.bills .bills__plan h2 {
+  color: hsl(213, 96%, 18%);
+}
+.bills .bills__services {
+  display: flex;
+  flex-direction: column;
+  justify-content: none;
+  align-items: none;
+  gap: 10px 0;
+}
+.bills .bills__services div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0 none;
+}
+.bills .bills__services div h3 {
+  font-weight: lighter;
+}
+.bills .bills__services div h3:first-child {
+  color: hsl(231, 11%, 63%);
+}
+.bills .bills__services div h3:nth-child(2) {
+  color: hsl(213, 96%, 18%);
+}
+
+.bills__total {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0 none;
+}
+.bills__total h3:first-child {
+  color: hsl(231, 11%, 63%);
+}
+.bills__total h3:last-child {
+  color: hsl(243, 100%, 62%);
+  font-family: BOLD;
+}
+
+#change_plan {
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 1rem;
+  text-decoration: underline;
+  color: hsl(231, 11%, 63%);
+  background-color: transparent;
+  font-weight: bold;
 }/*# sourceMappingURL=main.css.map */

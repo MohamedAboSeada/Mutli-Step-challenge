@@ -53,51 +53,8 @@
 		min-height: 300px;
 		transition: height 100ms ease;
 		// founded in all forms
-		.header {
-			margin-bottom: 20px;
-			h1 {
-				color: Color(MB);
-				font-size: 2.2rem;
-				font-weight: 700;
-			}
-			p {
-				color: Color(CG);
-				font-size: 1.5rem;
-			}
-		}
-
-		// first form
-		.personal_info {
-			.inputs {
-				div {
-					@include flex(column, none, none, 5px);
-					margin-bottom: 10px;
-					label {
-						font-size: 1.3rem;
-						color: Color(MB);
-						text-transform: capitalize;
-					}
-					input {
-						border: 1px solid Color(LG);
-						padding: 15px;
-						font-size: 1.3rem;
-						border-radius: 5px;
-						font-family: inherit;
-						outline: none;
-						&:focus {
-							border-color: Color(MB);
-						}
-						&::placeholder {
-							font-weight: bold;
-							color: #999;
-						}
-					}
-				}
-			}
-		}
-		// end first form
-		// second form
 	}
+	
 	// naviagte style
 	.navigate {
 		@include flex(row, space-between, center, none);

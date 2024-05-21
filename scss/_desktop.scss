@@ -1,3 +1,46 @@
+.header {
+	margin-bottom: 20px;
+	h1 {
+		color: Color(MB);
+		font-size: 2.2rem;
+		font-weight: 700;
+	}
+	p {
+		color: Color(CG);
+		font-size: 1.5rem;
+	}
+}
+// first form
+.personal_info {
+	.inputs {
+		div {
+			@include flex(column, none, none, 5px);
+			margin-bottom: 10px;
+			label {
+				font-size: 1.3rem;
+				color: Color(MB);
+				text-transform: capitalize;
+			}
+			input {
+				border: 1px solid Color(LG);
+				padding: 15px;
+				font-size: 1.3rem;
+				border-radius: 5px;
+				font-family: inherit;
+				outline: none;
+				&:focus {
+					border-color: Color(MB);
+				}
+				&::placeholder {
+					font-weight: bold;
+					color: #999;
+				}
+			}
+		}
+	}
+}
+// end first form
+
 // plans
 .plans {
 	.plans_cards {
@@ -97,7 +140,7 @@
 			margin-top: 15px;
 			h2 {
 				color: Color(MB);
-                font-size: 1.5rem;
+				font-size: 1.5rem;
 			}
 			p {
 				color: Color(CG);
@@ -181,4 +224,56 @@
 }
 .hidden-xs-up {
 	display: none !important;
+}
+// make summary form
+.bills {
+	@include flex(column, none, none, 10px);
+	padding: 20px;
+	background-color: Color(MA);
+	border-radius: 10px;
+    
+	.bills__plan {
+		@include flex(row, space-between, center, none);
+		height: 70px;
+		border-bottom: 1px solid #ccc;
+		h2 {
+			color: Color(MB);
+		}
+	}
+	.bills__services {
+		@include flex(column, none, none, 10px);
+		& div {
+			@include flex(row, space-between, center, none);
+			h3 {
+				font-weight: lighter;
+			}
+			& h3:first-child {
+				color: Color(CG);
+			}
+			& h3:nth-child(2) {
+				color: Color(MB);
+			}
+		}
+	}
+}
+.bills__total{
+    margin-top: 50px;
+    @include flex(row,space-between,center,none);
+    h3:first-child{
+        color: Color(CG);
+    }
+    h3:last-child{
+        color: Color(PB);
+        font-family: Font(Bold);
+    }
+}
+#change_plan{
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: 1rem;
+    text-decoration: underline;
+    color: Color(CG);
+    background-color: transparent;
+    font-weight: bold;
 }
