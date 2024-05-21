@@ -10,16 +10,25 @@
 		font-size: 1.5rem;
 	}
 }
+
 // first form
 .personal_info {
 	.inputs {
 		div {
 			@include flex(column, none, none, 5px);
 			margin-bottom: 10px;
+			position: relative;
 			label {
 				font-size: 1.3rem;
 				color: Color(MB);
 				text-transform: capitalize;
+			}
+			& .warn {
+				position: absolute;
+				top: 0;
+				right: 0;
+				color: #e42;
+				font-size: 1.3rem;
 			}
 			input {
 				border: 1px solid Color(LG);
@@ -28,19 +37,44 @@
 				border-radius: 5px;
 				font-family: inherit;
 				outline: none;
-				&:focus {
-					border-color: Color(MB);
-				}
+				font-weight: bold;
+				color: Color(WB);
 				&::placeholder {
 					font-weight: bold;
 					color: #999;
 				}
 			}
+			.error {
+				border-color: #e42;
+				&::placeholder {
+					color: #e42;
+				}
+			}
+			.vibrate {
+				animation: vibrate 0.3s linear;
+
+				@keyframes vibrate {
+					0% {
+						transform: translateX(0);
+					}
+					25% {
+						transform: translateX(5px);
+					}
+					50% {
+						transform: translateX(-5px);
+					}
+					75% {
+						transform: translateX(5px);
+					}
+					100% {
+						transform: translateX(0);
+					}
+				}
+			}
 		}
 	}
+	// end first form
 }
-// end first form
-
 // plans
 .plans {
 	.plans_cards {
@@ -117,11 +151,11 @@
 				height: 20px;
 				border-radius: 50%;
 				background-color: Color(LG);
-                transition: 300ms ease;
+				transition: 300ms ease;
 			}
-            .yearly{
-                align-self: flex-end;
-            }
+			.yearly {
+				align-self: flex-end;
+			}
 		}
 	}
 }
@@ -235,7 +269,7 @@
 	padding: 20px;
 	background-color: Color(MA);
 	border-radius: 10px;
-    
+
 	.bills__plan {
 		@include flex(row, space-between, center, none);
 		height: 70px;
@@ -260,24 +294,24 @@
 		}
 	}
 }
-.bills__total{
-    margin-top: 50px;
-    @include flex(row,space-between,center,none);
-    h3:first-child{
-        color: Color(CG);
-    }
-    h3:last-child{
-        color: Color(PB);
-        font-family: Font(Bold);
-    }
+.bills__total {
+	margin-top: 50px;
+	@include flex(row, space-between, center, none);
+	h3:first-child {
+		color: Color(CG);
+	}
+	h3:last-child {
+		color: Color(PB);
+		font-family: Font(Bold);
+	}
 }
-#change_plan{
-    border: none;
-    outline: none;
-    font-family: inherit;
-    font-size: 1rem;
-    text-decoration: underline;
-    color: Color(CG);
-    background-color: transparent;
-    font-weight: bold;
+#change_plan {
+	border: none;
+	outline: none;
+	font-family: inherit;
+	font-size: 1rem;
+	text-decoration: underline;
+	color: Color(CG);
+	background-color: transparent;
+	font-weight: bold;
 }

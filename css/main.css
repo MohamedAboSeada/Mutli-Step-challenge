@@ -304,11 +304,19 @@ body {
   align-items: none;
   gap: 5px 0;
   margin-bottom: 10px;
+  position: relative;
 }
 .personal_info .inputs div label {
   font-size: 1.3rem;
   color: hsl(213, 96%, 18%);
   text-transform: capitalize;
+}
+.personal_info .inputs div .warn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #e42;
+  font-size: 1.3rem;
 }
 .personal_info .inputs div input {
   border: 1px solid hsl(229, 24%, 87%);
@@ -317,9 +325,7 @@ body {
   border-radius: 5px;
   font-family: inherit;
   outline: none;
-}
-.personal_info .inputs div input:focus {
-  border-color: hsl(213, 96%, 18%);
+  font-weight: bold;
 }
 .personal_info .inputs div input::-moz-placeholder {
   font-weight: bold;
@@ -328,6 +334,35 @@ body {
 .personal_info .inputs div input::placeholder {
   font-weight: bold;
   color: #999;
+}
+.personal_info .inputs div .error {
+  border-color: #e42;
+}
+.personal_info .inputs div .error::-moz-placeholder {
+  color: #e42;
+}
+.personal_info .inputs div .error::placeholder {
+  color: #e42;
+}
+.personal_info .inputs div .vibrate {
+  animation: vibrate 0.3s linear;
+}
+@keyframes vibrate {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .plans .plans_cards {

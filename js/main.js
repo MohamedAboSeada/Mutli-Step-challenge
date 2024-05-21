@@ -1,18 +1,84 @@
 document.addEventListener('DOMContentLoaded', () => {
+	// next and back buttons
 	const nextBtn = document.getElementById('next');
 	const lastBtn = document.getElementById('last');
-	let index = 0;
+	const user_name = document.getElementById('username');
+	const email = document.getElementById('email');
+	const phone = document.getElementById('phone');
+
+	// change plan button
+	let change_btn = document.getElementById('change_plan');
+
+	// plan prices elements and services prices
+	const plan_prices = document.querySelectorAll('.plan_info_price');
+	const service_prices = document.querySelectorAll('.price');
+
+	// toggle buttons elements
+	let toggler_span = document.querySelectorAll('.toggler span');
+	let toggle_btn = document.querySelector('.toggle');
+
+	let Plan_Prices = {
+		Yearly: ['+$90/yr', '+$120/yr', '+$150/yr'],
+		Monthly: ['+$9/mo', '+$12/mo', '+$15/mo'],
+	};
+
+	let Service_Prices = {
+		Yearly: ['+$10/yr', '+$20/yr', '+$20/yr'],
+		Monthly: ['+$1/mo', '+$2/mo', '+$2/mo'],
+	};
+
 	let toggle = 'Monthly';
 
+	// index for tacking the current step
+	let index = 0;
+
+	// an object to save bills the choosed plan and choosed services
 	let bills = {
 		plan: document.querySelector('.plans_cards div.active').children[1],
 		services: document.querySelectorAll(
 			'.addons__cards div.active .addon__info'
 		),
 	};
+	function vibration(element) {
+		element.classList.add('vibrate');
+		setTimeout((_) => {
+			element.classList.remove('vibrate');
+		}, 400);
+	}
+	function validateField(field, regex = null) {
+		if (field.value === '') {
+			vibration(field);
+			field.classList.add('error');
+			field.parentNode.children[2].classList.replace('hide', 'show');
+			return false;
+		} else if (regex && !regex.test(field.value)) {
+			vibration(field);
+			field.classList.add('error');
+			field.parentNode.children[2].classList.replace('hide', 'show');
+			return false;
+		} else {
+			field.classList.remove('error');
+			field.parentNode.children[2].classList.replace('show', 'hide');
+			return true;
+		}
+	}
+
 	nextBtn.addEventListener('click', () => {
 		const activeStep = document.querySelector('p.active');
 		const activeForm = document.querySelector('.show');
+
+		if (index === 0) {
+			let isUserNameValid = validateField(user_name);
+			if (!isUserNameValid) return;
+
+			let emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+			let isEmailValid = validateField(email, emailRegex);
+			if (!isEmailValid) return;
+
+			let phoneRegex = /^\d{11}$/;
+			let isPhoneValid = validateField(phone, phoneRegex);
+			if (!isPhoneValid) return;
+		}
 
 		if (+activeStep.textContent + 1 > 1) {
 			lastBtn.style.visibility = 'visible';
@@ -159,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		return match ? Number(match[0]) : null;
 	}
 	// change plan btn
-	let change_btn = document.getElementById('change_plan');
+
 	change_btn.addEventListener('click', (_) => {
 		[...document.querySelector('.forms').children].forEach((child) => {
 			if (child.classList.contains('show')) {
@@ -179,20 +245,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		plans.classList.replace('hide', 'show');
 	});
 
-	// make the toggler
-	let toggler_span = document.querySelectorAll('.toggler span');
-	let toggle_btn = document.querySelector('.toggle');
-	let Plan_Prices = {
-		Yearly: ['+$90/yr', '+$120/yr', '+$150/yr'],
-		Monthly: ['+$9/mo', '+$12/mo', '+$15/mo'],
-	};
-	let Service_Prices = {
-		Yearly: ['+$10/yr', '+$20/yr', '+$20/yr'],
-		Monthly: ['+$1/mo', '+$2/mo', '+$2/mo'],
-	};
-	const plan_prices = document.querySelectorAll('.plan_info_price');
-	const service_prices = document.querySelectorAll('.price');
-	console.log(plan_prices, service_prices);
 	toggle_btn.addEventListener('click', (_) => {
 		toggle = toggle === 'Monthly' ? 'Yearly' : 'Monthly';
 		[...toggler_span].forEach((span) => {
@@ -222,3 +274,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	});
 });
+
+/*
+	TODO : Make input validation
+	TODO : Make the last STEP
+	TODO : Start the Desktop Design
+*/
