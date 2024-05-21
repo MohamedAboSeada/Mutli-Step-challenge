@@ -147,10 +147,12 @@ document.addEventListener('DOMContentLoaded', () => {
 		let total = 0;
 		let total_sum = document.getElementById('total');
 		total += extractNumber(bills.plan.lastElementChild.textContent);
-		[...bills.services].forEach(service => {
+		[...bills.services].forEach((service) => {
 			total += extractNumber(service.lastElementChild.textContent);
 		});
-		total_sum.textContent = `+${total}/${(toggle === "Monthly") ? 'mo' : 'yr'}`;
+		total_sum.textContent = `+${total}/${
+			toggle === 'Monthly' ? 'mo' : 'yr'
+		}`;
 	}
 	function extractNumber(str) {
 		const match = str.match(/\d+/);
@@ -169,6 +171,8 @@ document.addEventListener('DOMContentLoaded', () => {
 				step.classList.remove('active');
 			}
 		});
+		nextBtn.textContent = 'Next Step';
+		index = 1;
 		let step_2 = document.querySelector('.sp');
 		step_2.classList.add('active');
 		let plans = document.querySelector('.plans');
@@ -198,7 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				span.classList.add('active');
 			}
 		});
-		
+
 		toggle_btn.children[0].classList.toggle('yearly');
 
 		if (toggle === 'Monthly') {
@@ -218,4 +222,3 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	});
 });
-
