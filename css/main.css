@@ -245,7 +245,7 @@ body {
     transform: translateX(-50%);
     background-color: hsl(0, 0%, 100%);
     padding: 25px;
-    width: 93%;
+    width: 95%;
     box-shadow: 0 5px 10px hsla(228, 100%, 84%, 0.1);
     min-height: 300px;
     transition: height 100ms ease;
@@ -294,107 +294,6 @@ body {
     font-weight: bold;
     color: #999;
   }
-  .forms .plans .plans_cards {
-    display: flex;
-    flex-direction: column;
-    justify-content: none;
-    align-items: none;
-    gap: 10px 0;
-  }
-  .forms .plans .plans_cards .plan_card {
-    -webkit-user-select: none;
-       -moz-user-select: none;
-            user-select: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: none;
-    align-items: center;
-    gap: 0 10px;
-    padding: 0 15px;
-    height: 100px;
-    border: 1px solid hsl(229, 24%, 87%);
-    border-radius: 10px;
-  }
-  .forms .plans .plans_cards .plan_card .plan__image {
-    width: 50px;
-    height: 50px;
-  }
-  .forms .plans .plans_cards .plan_card .plan_info {
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: none;
-    align-items: none;
-    gap: 5px 0;
-  }
-  .forms .plans .plans_cards .plan_card .plan_info h2 {
-    color: hsl(213, 96%, 18%);
-    font-size: 1.7rem;
-  }
-  .forms .plans .plans_cards .plan_card .plan_info p {
-    font-size: 1.2rem;
-    color: hsl(231, 11%, 63%);
-    font-weight: bold;
-  }
-  .forms .plans .plans_cards .plan_card:nth-child(1) .plan__image {
-    background-image: url("../assets/images/icon-arcade.svg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  .forms .plans .plans_cards .plan_card:nth-child(2) .plan__image {
-    background-image: url("../assets/images/icon-advanced.svg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  .forms .plans .plans_cards .plan_card:nth-child(3) .plan__image {
-    background-image: url("../assets/images/icon-pro.svg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  .forms .plans .plans_cards .active {
-    border-color: hsl(243, 100%, 62%);
-    background-color: hsla(228, 100%, 84%, 0.1);
-  }
-  .forms .plans .toggler {
-    margin-top: 15px;
-    background-color: hsl(217, 100%, 97%);
-    padding: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: none;
-    gap: 0 10px;
-    border-radius: 10px;
-  }
-  .forms .plans .toggler span {
-    font-weight: bold;
-    color: hsl(231, 11%, 63%);
-    font-size: 1.3rem;
-  }
-  .forms .plans .toggler span.active {
-    color: hsl(213, 96%, 18%);
-  }
-  .forms .plans .toggler .toggle {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 10px 0;
-    padding: 0 3px;
-    width: 50px;
-    height: 25px;
-    border-radius: 25px;
-    background-color: hsl(213, 96%, 18%);
-  }
-  .forms .plans .toggler .toggle .circle {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: hsl(229, 24%, 87%);
-  }
   .navigate {
     display: flex;
     flex-direction: row;
@@ -429,12 +328,114 @@ body {
     color: hsl(0, 0%, 100%);
   }
 }
+.plans .plans_cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: none;
+  align-items: none;
+  gap: 5px 0;
+}
+.plans .plans_cards .plan_card {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: none;
+  align-items: center;
+  gap: 0 10px;
+  padding: 0 15px;
+  height: 100px;
+  border: 1px solid hsl(229, 24%, 87%);
+  border-radius: 10px;
+}
+.plans .plans_cards .plan_card .plan__image {
+  width: 50px;
+  height: 50px;
+}
+.plans .plans_cards .plan_card .plan_info {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: none;
+  align-items: none;
+  gap: 5px 0;
+}
+.plans .plans_cards .plan_card .plan_info h2 {
+  color: hsl(213, 96%, 18%);
+  font-size: 1.7rem;
+}
+.plans .plans_cards .plan_card .plan_info p {
+  font-size: 1.2rem;
+  color: hsl(231, 11%, 63%);
+  font-weight: bold;
+}
+.plans .plans_cards .plan_card:nth-child(1) .plan__image {
+  background-image: url("../assets/images/icon-arcade.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.plans .plans_cards .plan_card:nth-child(2) .plan__image {
+  background-image: url("../assets/images/icon-advanced.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.plans .plans_cards .plan_card:nth-child(3) .plan__image {
+  background-image: url("../assets/images/icon-pro.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.plans .plans_cards .active {
+  border-color: hsl(243, 100%, 62%);
+  background-color: hsla(228, 100%, 84%, 0.1);
+}
+.plans .toggler {
+  margin-top: 10px;
+  background-color: hsl(217, 100%, 97%);
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: none;
+  gap: 0 10px;
+  border-radius: 10px;
+}
+.plans .toggler span {
+  font-weight: bold;
+  color: hsl(231, 11%, 63%);
+  font-size: 1.3rem;
+}
+.plans .toggler span.active {
+  color: hsl(213, 96%, 18%);
+}
+.plans .toggler .toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px 0;
+  padding: 0 3px;
+  width: 50px;
+  height: 25px;
+  border-radius: 25px;
+  background-color: hsl(213, 96%, 18%);
+}
+.plans .toggler .toggle .circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: hsl(229, 24%, 87%);
+}
+
 .addons__cards {
   display: flex;
   flex-direction: column;
   justify-content: none;
   align-items: none;
-  gap: 15px 0;
+  gap: 10px 0;
 }
 .addons__cards div.active {
   background-color: hsla(228, 100%, 84%, 0.1);
@@ -445,7 +446,7 @@ body {
   flex-direction: row;
   justify-content: none;
   align-items: center;
-  gap: 0 20px;
+  gap: 0 10px;
   border: 1px solid hsl(229, 24%, 87%);
   padding: 10px 15px;
   border-radius: 10px;
@@ -475,7 +476,6 @@ body {
   height: 27px;
   border: 1px solid #c8ccd4;
   border-radius: 3px;
-  vertical-align: middle;
   transition: background 0.1s ease;
   cursor: pointer;
   display: block;

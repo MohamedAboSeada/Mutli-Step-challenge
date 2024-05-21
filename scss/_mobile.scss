@@ -48,7 +48,7 @@
 		transform: translateX(-50%);
 		background-color: Color(WE);
 		padding: 25px;
-		width: 93%;
+		width: 95%;
 		box-shadow: 0 5px 10px Color(PC);
 		min-height: 300px;
 		transition: height 100ms ease;
@@ -97,86 +97,6 @@
 		}
 		// end first form
 		// second form
-		.plans {
-			.plans_cards {
-				@include flex(column, none, none, 10px);
-
-				.plan_card {
-					user-select: none;
-					@include flex(row, none, center, 10px);
-					padding: 0 15px;
-					height: 100px;
-					border: 1px solid Color(LG);
-					border-radius: 10px;
-					.plan__image {
-						width: 50px;
-						height: 50px;
-					}
-					.plan_info {
-						margin-top: 10px;
-						@include flex(column, none, none, 5px);
-						h2 {
-							color: Color(MB);
-							font-size: 1.7rem;
-						}
-						p {
-							font-size: 1.2rem;
-							color: Color(CG);
-							font-weight: bold;
-						}
-					}
-					&:nth-child(1) {
-						.plan__image {
-							@include bg(Image('icon-arcade'));
-						}
-					}
-					&:nth-child(2) {
-						.plan__image {
-							@include bg(Image('icon-advanced'));
-						}
-					}
-					&:nth-child(3) {
-						.plan__image {
-							@include bg(Image('icon-pro'));
-						}
-					}
-				}
-				.active {
-					border-color: Color(PB);
-					background-color: Color(PC);
-				}
-			}
-			.toggler {
-				margin-top: 15px;
-				background-color: Color(MA);
-				padding: 10px;
-				@include flex(row, center, none, 10px);
-				border-radius: 10px;
-				& span {
-					font-weight: bold;
-					color: Color(CG);
-					font-size: 1.3rem;
-					&.active {
-						color: Color(MB);
-					}
-				}
-				.toggle {
-					@include flex(column, center, flex-start, 10px);
-					padding: 0 3px;
-					width: 50px;
-					height: 25px;
-					border-radius: 25px;
-					background-color: Color(MB);
-					.circle {
-						width: 20px;
-						height: 20px;
-						border-radius: 50%;
-						background-color: Color(LG);
-					}
-				}
-			}
-		}
-		// end second form
 	}
 	// naviagte style
 	.navigate {
