@@ -244,7 +244,7 @@ body {
     border-radius: 10px;
     transform: translateX(-50%);
     background-color: hsl(0, 0%, 100%);
-    padding: 15px 25px;
+    padding: 25px;
     width: 93%;
     box-shadow: 0 5px 10px hsla(228, 100%, 84%, 0.1);
     min-height: 300px;
@@ -383,7 +383,7 @@ body {
     justify-content: center;
     align-items: flex-start;
     gap: 10px 0;
-    padding: 0 2px;
+    padding: 0 3px;
     width: 50px;
     height: 25px;
     border-radius: 25px;
@@ -428,4 +428,110 @@ body {
     background-color: hsl(213, 96%, 18%);
     color: hsl(0, 0%, 100%);
   }
+}
+.addons__cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: none;
+  align-items: none;
+  gap: 15px 0;
+}
+.addons__cards div.active {
+  background-color: hsla(228, 100%, 84%, 0.1);
+  border-color: hsl(243, 100%, 62%);
+}
+.addons__cards .addon__card {
+  display: flex;
+  flex-direction: row;
+  justify-content: none;
+  align-items: center;
+  gap: 0 20px;
+  border: 1px solid hsl(229, 24%, 87%);
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+.addons__cards .addon__card .addon__info {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0 none;
+  margin-top: 15px;
+}
+.addons__cards .addon__card .addon__info h2 {
+  color: hsl(213, 96%, 18%);
+  font-size: 1.5rem;
+}
+.addons__cards .addon__card .addon__info p {
+  color: hsl(231, 11%, 63%);
+  font-weight: bold;
+}
+
+.cbx {
+  position: relative;
+  top: 1px;
+  width: 27px;
+  height: 27px;
+  border: 1px solid #c8ccd4;
+  border-radius: 3px;
+  vertical-align: middle;
+  transition: background 0.1s ease;
+  cursor: pointer;
+  display: block;
+}
+.cbx:after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 8px;
+  width: 7px;
+  height: 14px;
+  opacity: 0;
+  transform: rotate(45deg) scale(0);
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transition: all 0.3s ease;
+  transition-delay: 0.15s;
+}
+
+.lbl {
+  margin-left: 5px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+#cbx:checked ~ .cbx {
+  border-color: transparent;
+  background: #6871f1;
+}
+#cbx:checked ~ .cbx:after {
+  opacity: 1;
+  transform: rotate(45deg) scale(1);
+}
+
+#cbx2:checked ~ .cbx {
+  border-color: transparent;
+  background: #6871f1;
+}
+#cbx2:checked ~ .cbx:after {
+  opacity: 1;
+  transform: rotate(45deg) scale(1);
+}
+
+#cbx3:checked ~ .cbx {
+  border-color: transparent;
+  background: #6871f1;
+}
+#cbx3:checked ~ .cbx:after {
+  opacity: 1;
+  transform: rotate(45deg) scale(1);
+}
+
+.cntr {
+  position: relative;
+}
+
+.hidden-xs-up {
+  display: none !important;
 }/*# sourceMappingURL=main.css.map */

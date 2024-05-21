@@ -68,6 +68,7 @@ body {
 	box-sizing: border-box;
 }
 
+
 @mixin flex($direction, $justify-content, $align-items, $gap) {
 	display: flex;
 	flex-direction: $direction;
@@ -79,15 +80,15 @@ body {
 		gap: 0 $gap;
 	}
 }
-@mixin bg($image){
+@mixin bg($image) {
 	background-image: $image;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
 }
-.hide{
+.hide {
 	display: none;
 }
-.show{
+.show {
 	display: block;
 }

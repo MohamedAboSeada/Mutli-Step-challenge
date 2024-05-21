@@ -11,7 +11,8 @@
 
 		.step {
 			.step__number {
-                transition: background 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+				transition: background 200ms
+					cubic-bezier(0.25, 0.46, 0.45, 0.94);
 				margin-top: 25px;
 				width: 50px;
 				height: 50px;
@@ -46,11 +47,11 @@
 		border-radius: 10px;
 		transform: translateX(-50%);
 		background-color: Color(WE);
-		padding: 15px 25px;
+		padding: 25px;
 		width: 93%;
 		box-shadow: 0 5px 10px Color(PC);
-        min-height: 300px;
-        transition: height 100ms ease;
+		min-height: 300px;
+		transition: height 100ms ease;
 		// founded in all forms
 		.header {
 			margin-bottom: 20px;
@@ -64,7 +65,7 @@
 				font-size: 1.5rem;
 			}
 		}
-        
+
 		// first form
 		.personal_info {
 			.inputs {
@@ -101,7 +102,7 @@
 				@include flex(column, none, none, 10px);
 
 				.plan_card {
-                    user-select: none;
+					user-select: none;
 					@include flex(row, none, center, 10px);
 					padding: 0 15px;
 					height: 100px;
@@ -116,12 +117,12 @@
 						@include flex(column, none, none, 5px);
 						h2 {
 							color: Color(MB);
-                            font-size: 1.7rem;
+							font-size: 1.7rem;
 						}
 						p {
 							font-size: 1.2rem;
 							color: Color(CG);
-                            font-weight: bold;
+							font-weight: bold;
 						}
 					}
 					&:nth-child(1) {
@@ -129,51 +130,51 @@
 							@include bg(Image('icon-arcade'));
 						}
 					}
-                    &:nth-child(2) {
+					&:nth-child(2) {
 						.plan__image {
 							@include bg(Image('icon-advanced'));
 						}
 					}
-                    &:nth-child(3) {
+					&:nth-child(3) {
 						.plan__image {
 							@include bg(Image('icon-pro'));
 						}
 					}
 				}
-                .active{
-                    border-color: Color(PB);
-                    background-color: Color(PC);
-                }
+				.active {
+					border-color: Color(PB);
+					background-color: Color(PC);
+				}
 			}
-            .toggler{
-                margin-top: 15px;
-                background-color: Color(MA);
-                padding: 10px;
-                @include flex(row,center,none,10px);
-                border-radius: 10px;
-                & span{
-                    font-weight: bold;
-                    color: Color(CG);
-                    font-size: 1.3rem;
-                    &.active{
-                        color: Color(MB);
-                    }
-                }
-                .toggle{
-                    @include flex(column,center,flex-start,10px);
-                    padding: 0 2px;
-                    width: 50px;
-                    height: 25px;
-                    border-radius: 25px;
-                    background-color: Color(MB);
-                    .circle{
-                        width: 20px;
-                        height: 20px;
-                        border-radius: 50%;
-                        background-color: Color(LG);
-                    }
-                }
-            }
+			.toggler {
+				margin-top: 15px;
+				background-color: Color(MA);
+				padding: 10px;
+				@include flex(row, center, none, 10px);
+				border-radius: 10px;
+				& span {
+					font-weight: bold;
+					color: Color(CG);
+					font-size: 1.3rem;
+					&.active {
+						color: Color(MB);
+					}
+				}
+				.toggle {
+					@include flex(column, center, flex-start, 10px);
+					padding: 0 3px;
+					width: 50px;
+					height: 25px;
+					border-radius: 25px;
+					background-color: Color(MB);
+					.circle {
+						width: 20px;
+						height: 20px;
+						border-radius: 50%;
+						background-color: Color(LG);
+					}
+				}
+			}
 		}
 		// end second form
 	}
@@ -197,9 +198,9 @@
 			&:first-child {
 				background-color: Color(WE);
 				color: Color(CG);
-                visibility: hidden;
-                opacity: 0;
-                transition: 300ms ease;
+				visibility: hidden;
+				opacity: 0;
+				transition: 300ms ease;
 			}
 			&:last-child {
 				background-color: Color(MB);
