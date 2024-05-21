@@ -3,6 +3,9 @@
 	body {
 		background-color: Color(MA);
 	}
+	*{
+		cursor: default !important;
+	}
 	// steps style
 	.steps {
 		@include flex(row, center, flex-start, 20px);

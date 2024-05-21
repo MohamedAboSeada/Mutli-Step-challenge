@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const email = document.getElementById('email');
 	const phone = document.getElementById('phone');
 
+	let personal_info = {};
 	// change plan button
 	let change_btn = document.getElementById('change_plan');
 
@@ -78,6 +79,13 @@ document.addEventListener('DOMContentLoaded', () => {
 			let phoneRegex = /^\d{11}$/;
 			let isPhoneValid = validateField(phone, phoneRegex);
 			if (!isPhoneValid) return;
+
+			personal_info = {
+				user: user_name.value,
+				email: email.value,
+				phone: phone.value,
+			};
+			console.log(personal_info);
 		}
 
 		if (+activeStep.textContent + 1 > 1) {

@@ -189,6 +189,10 @@ body {
   box-sizing: border-box;
 }
 
+button {
+  cursor: pointer;
+}
+
 .hide {
   display: none;
 }
@@ -200,6 +204,9 @@ body {
 @media (max-width: 768px) {
   body {
     background-color: hsl(217, 100%, 97%);
+  }
+  * {
+    cursor: default !important;
   }
   .steps {
     display: flex;
@@ -385,6 +392,7 @@ body {
   height: 100px;
   border: 1px solid hsl(229, 24%, 87%);
   border-radius: 10px;
+  cursor: pointer;
 }
 .plans .plans_cards .plan_card .plan__image {
   width: 50px;
@@ -459,6 +467,7 @@ body {
   height: 25px;
   border-radius: 25px;
   background-color: hsl(213, 96%, 18%);
+  cursor: pointer;
 }
 .plans .toggler .toggle .circle {
   width: 20px;
@@ -518,8 +527,8 @@ body {
   border: 1px solid #c8ccd4;
   border-radius: 3px;
   transition: background 0.1s ease;
-  cursor: pointer;
   display: block;
+  cursor: pointer;
 }
 .cbx:after {
   content: "";
