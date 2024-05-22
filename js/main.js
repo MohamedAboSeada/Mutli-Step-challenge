@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const user_name = document.getElementById('username');
 	const email = document.getElementById('email');
 	const phone = document.getElementById('phone');
+	const navigate = document.querySelector('.navigate');
 
 	let personal_info = {};
 	// change plan button
@@ -50,19 +51,32 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (field.value === '') {
 			vibration(field);
 			field.classList.add('error');
-			field.parentNode.children[2].classList.replace('hide', 'show');
+			field.parentNode.children[0].classList.add('error');
 			return false;
 		} else if (regex && !regex.test(field.value)) {
 			vibration(field);
 			field.classList.add('error');
-			field.parentNode.children[2].classList.replace('hide', 'show');
+			field.parentNode.children[0].classList.add('error');
 			return false;
 		} else {
 			field.classList.remove('error');
-			field.parentNode.children[2].classList.replace('show', 'hide');
+			field.parentNode.children[0].classList.remove('error');
 			return true;
 		}
 	}
+	
+	// live validation
+	user_name.addEventListener('input', (_) => {
+		validateField(user_name);
+	});
+	email.addEventListener('input', (_) => {
+		let emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+		validateField(email, emailRegex);
+	});
+	phone.addEventListener('input', (_) => {
+		let phoneRegex = /^\d{11}$/;
+		validateField(phone, phoneRegex);
+	});
 
 	nextBtn.addEventListener('click', () => {
 		const activeStep = document.querySelector('p.active');
@@ -85,7 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
 				email: email.value,
 				phone: phone.value,
 			};
-			console.log(personal_info);
 		}
 
 		if (+activeStep.textContent + 1 > 1) {
@@ -97,6 +110,12 @@ document.addEventListener('DOMContentLoaded', () => {
 			index++;
 			activeStep.classList.remove('active');
 			nextStep.classList.add('active');
+		} else {
+			// last step
+			const success = document.querySelector('.success');
+			success.classList.replace('hide', 'sp_show');
+			activeForm.classList.replace('show', 'hide');
+			navigate.classList.add('hide');
 		}
 
 		if (index >= 3) {

@@ -90,8 +90,11 @@ button{
 	background-position: center;
 }
 .hide {
-	display: none;
+	display: none !important;
 }
 .show {
 	display: block;
+}
+.sp_show{
+	display: flex;
 }

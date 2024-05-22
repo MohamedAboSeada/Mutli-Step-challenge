@@ -194,11 +194,15 @@ button {
 }
 
 .hide {
-  display: none;
+  display: none !important;
 }
 
 .show {
   display: block;
+}
+
+.sp_show {
+  display: flex;
 }
 
 @media (max-width: 768px) {
@@ -316,14 +320,11 @@ button {
 .personal_info .inputs div label {
   font-size: 1.3rem;
   color: hsl(213, 96%, 18%);
+  font-weight: bold;
   text-transform: capitalize;
 }
-.personal_info .inputs div .warn {
-  position: absolute;
-  top: 0;
-  right: 0;
-  color: #e42;
-  font-size: 1.3rem;
+.personal_info .inputs div label.error {
+  color: #e42 !important;
 }
 .personal_info .inputs div input {
   border: 1px solid hsl(229, 24%, 87%);
@@ -594,7 +595,7 @@ button {
   gap: 10px 0;
   padding: 20px;
   background-color: hsl(217, 100%, 97%);
-  border-radius: 10px;
+  border-radius: 5px;
 }
 .bills .bills__plan {
   display: flex;
@@ -633,7 +634,7 @@ button {
 }
 
 .bills__total {
-  margin-top: 50px;
+  margin-top: 30px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -657,4 +658,33 @@ button {
   color: hsl(231, 11%, 63%);
   background-color: transparent;
   font-weight: bold;
+}
+
+.success {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px 0;
+  text-align: center;
+}
+.success .checkmark {
+  width: 70px;
+  height: 70px;
+  background-image: url("../assets/images/icon-thank-you.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.success h1 {
+  font-size: 3rem;
+  font-family: BOLD;
+  color: hsl(213, 96%, 18%);
+}
+.success p {
+  color: hsl(231, 11%, 63%);
+  font-size: 1.5rem;
+}
+.success p a {
+  color: #000;
 }/*# sourceMappingURL=main.css.map */

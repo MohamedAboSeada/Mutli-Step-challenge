@@ -21,15 +21,13 @@
 			label {
 				font-size: 1.3rem;
 				color: Color(MB);
+				font-weight: bold;
 				text-transform: capitalize;
 			}
-			& .warn {
-				position: absolute;
-				top: 0;
-				right: 0;
-				color: #e42;
-				font-size: 1.3rem;
+			label.error{
+				color: #e42 !important;
 			}
+
 			input {
 				border: 1px solid Color(LG);
 				padding: 15px;
@@ -270,7 +268,7 @@
 	@include flex(column, none, none, 10px);
 	padding: 20px;
 	background-color: Color(MA);
-	border-radius: 10px;
+	border-radius: 5px;
 
 	.bills__plan {
 		@include flex(row, space-between, center, none);
@@ -297,7 +295,7 @@
 	}
 }
 .bills__total {
-	margin-top: 50px;
+	margin-top: 30px;
 	@include flex(row, space-between, center, none);
 	h3:first-child {
 		color: Color(CG);
@@ -316,4 +314,25 @@
 	color: Color(CG);
 	background-color: transparent;
 	font-weight: bold;
+}
+.success{
+	@include flex(column,center,center,30px);
+	text-align: center;
+	.checkmark{
+		width: 70px;
+		height: 70px;
+		@include bg(Image('icon-checkmark'));
+	}
+	h1{
+		font-size: 3rem;
+		font-family: Font(Bold);
+		color: Color(MB);
+	}
+	p{
+		color: Color(CG);
+		font-size: 1.5rem;
+		a{
+			color: #000;
+		}
+	}
 }
